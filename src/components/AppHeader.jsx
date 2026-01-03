@@ -20,29 +20,27 @@ function AppHeader() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand" href="#">
+          {/* CORREZIONE 1: Usa Link per il brand e correggi il percorso immagine */}
+          <Link className="navbar-brand" to="/"> 
             <img
-              src="public\logo_footer.png"
+              src="/logo_footer.png" // Ho rimosso 'public\' e usato '/'
               alt="Logo"
               className="navbar-logo"
             />
-          </a>
+          </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                {/* CORREZIONE 2: Usa solo Link e applica le classi Bootstrap direttamente */}
+                <Link className="nav-link active" aria-current="page" to="/"> 
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
+                {/* CORREZIONE 3: Usa solo Link e applica le classi Bootstrap direttamente */}
+                <Link className="nav-link" to="/products">
+                  Products
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
