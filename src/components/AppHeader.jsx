@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function AppHeader() {
   return (
     <header className="p-1">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="light">
+      <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -17,7 +17,11 @@ function AppHeader() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <a className="navbar-brand" href="#">
-            <img src="public\ChatGPT Image 3 gen 2026, 11_54_47.png" alt="" />
+            <img
+              src="/ChatGPT Image 3 gen 2026, 11_54_47.png"
+              alt="Logo"
+              className="navbar-logo"
+            />
           </a>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
