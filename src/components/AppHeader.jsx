@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 function AppHeader() {
   return (
     <header className="p-1">
-      <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
+      <nav
+        className="navbar navbar-expand-lg"
+        style={{ backgroundColor: "#e3f2fd" }}
+        data-bs-theme="light"
+      >
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -18,7 +22,7 @@ function AppHeader() {
           </button>
           <a className="navbar-brand" href="#">
             <img
-              src="/ChatGPT Image 3 gen 2026, 11_54_47.png"
+              src="public\logo_footer.png"
               alt="Logo"
               className="navbar-logo"
             />
