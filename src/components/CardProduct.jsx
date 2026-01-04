@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
+
 function CardProduct({ product }) {
-  const { dimensioni, imagepath, immagine, nome, peso, potenza_watt, prezzo, range_frequenza, specifiche} = product;
+  const { dimensioni, imagepath, immagine, nome, peso, potenza_watt, prezzo, range_frequenza, specifiche, id} = product;
 
   // Determina il percorso dell'immagine: usa 'imagepath' se presente, altrimenti 'immagine', 
   // oppure una fallback se entrambi non sono definiti o sono vuoti.
@@ -57,6 +60,11 @@ function CardProduct({ product }) {
                 <span className="d-block small">{renderSpecifiche}</span>
               )}
             </p>
+
+            {/* Link al dettaglio del prodotto */}
+            <Link to={`/product/${id}`} className="btn btn-primary">
+              Dettagli
+            </Link>
 
             {/* Esempio di testo secondario, mantenuto per riferimento */}
             <p className="card-text">
