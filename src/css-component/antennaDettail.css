@@ -207,12 +207,12 @@
 .antenna-footer {
     margin-top: auto;
     display: flex;
+    justify-content: center;
     gap: 15px;
 }
 
-.antenna-add-to-cart-button {
-    flex: 1;
-    padding: 16px 24px;
+.antenna-contact-button {
+    padding: 16px 40px;
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
     border: none;
@@ -220,35 +220,14 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s;
     box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
 }
 
-.antenna-add-to-cart-button:hover {
+.antenna-contact-button:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(59, 130, 246, 0.5);
-}
-
-.antenna-contact-button {
-    padding: 16px 24px;
-    background: white;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.antenna-contact-button:hover {
-    background: #3b82f6;
-    color: white;
-    transform: translateY(-2px);
 }
 
 .antenna-button-icon {
