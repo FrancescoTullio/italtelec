@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-import { useParams } from 'react-router-dom';
 
-
-function Detailpage() {
-
-
-    const { slug } = useParams();
-  return (
-    <div>
-      <h1>Detail Page</h1>
-      <p>Welcome to the Detail page! Slug: {slug}</p>
-=======
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../css-component/antennaDettail.css';
@@ -180,7 +168,6 @@ function Detailpage() {
           </div>
         </div>
       )}
->>>>>>> dettail
     </div>
   );
 }
