@@ -1,0 +1,287 @@
+/* Antenna Detail Page Styles - Prefixed to avoid conflicts */
+
+.antenna-detail-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.antenna-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.antenna-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: antennaSpinAnimation 1s linear infinite;
+}
+
+@keyframes antennaSpinAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.antenna-loading-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.antenna-error-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.antenna-error-icon {
+    width: 60px;
+    height: 60px;
+    color: #ef4444;
+    margin: 0 auto;
+}
+
+.antenna-error-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.antenna-error-message {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.antenna-retry-button {
+    padding: 12px 30px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.antenna-retry-button:hover {
+    background: #dc2626;
+}
+
+.antenna-detail-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.antenna-image-section {
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.antenna-detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.antenna-content-section {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.antenna-detail-header {
+    margin-bottom: 30px;
+}
+
+.antenna-detail-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.antenna-price-tag {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #10b981;
+    background: #d1fae5;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.antenna-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.antenna-spec-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.antenna-spec-icon {
+    width: 24px;
+    height: 24px;
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.antenna-spec-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.antenna-spec-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.antenna-description-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.antenna-description-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.antenna-description-text {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.antenna-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.antenna-add-to-cart-button {
+    flex: 1;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
+}
+
+.antenna-add-to-cart-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.5);
+}
+
+.antenna-contact-button {
+    padding: 16px 24px;
+    background: white;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.antenna-contact-button:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.antenna-button-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .antenna-detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .antenna-specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .antenna-footer {
+        flex-direction: column;
+    }
+
+    .antenna-content-section {
+        padding: 20px;
+    }
+
+    .antenna-image-section {
+        padding: 20px;
+    }
+
+    .antenna-detail-title {
+        font-size: 24px;
+    }
+
+    .antenna-price-tag {
+        font-size: 22px;
+    }
+}
