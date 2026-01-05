@@ -2,45 +2,47 @@ import { Link } from "react-router-dom";
 
 function AppHeader() {
   return (
-    <header className="p-1">
-      <nav
-        className="navbar navbar-expand-lg"
-        style={{ backgroundColor: "#e3f2fd" }}
-        data-bs-theme="light"
-      >
-        <div className="container-fluid">
+    <header className="shadow-sm sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+        <div className="container">
+          <Link className="navbar-brand d-flex align-items-center" to="/">
+            <img
+              src="/logo_footer.png"
+              alt="Italtelec Logo"
+              height="60"
+              className="d-inline-block align-top me-2"
+            />
+            <span className="fw-bold text-primary fs-4 d-none d-md-inline">Italtelec</span>
+          </Link>
+          
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          {/* CORREZIONE 1: Usa Link per il brand e correggi il percorso immagine */}
-          <Link className="navbar-brand" to="/">
-            <img
-              src="/logo_footer.png" // Ho rimosso 'public\' e usato '/'
-              alt="Logo"
-              className="navbar-logo"
-            />
-          </Link>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                {/* CORREZIONE 2: Usa solo Link e applica le classi Bootstrap direttamente */}
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link px-3 fw-semibold" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                {/* CORREZIONE 3: Usa solo Link e applica le classi Bootstrap direttamente */}
-                <Link className="nav-link" to="/products">
-                  Products
+                <Link className="nav-link px-3 fw-semibold" to="/products">
+                  Prodotti
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link px-3 fw-semibold" href="mailto:italtelec_international@italint.com">
+                  Contatti
+                </a>
               </li>
             </ul>
           </div>
