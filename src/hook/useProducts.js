@@ -7,7 +7,7 @@ function useProducts() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("italtelecback2.vercel.app/italtelec");
+      const response = await fetch("https://italtelecback2.vercel.app/italtelec");
       const data = await response.json();
       setAllProducts(data.data);
       setMetadata(data.metadata);
