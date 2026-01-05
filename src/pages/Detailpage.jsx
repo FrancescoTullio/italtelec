@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../css-component/antennaDettail.css';
 import { useParams } from 'react-router-dom';
 
-function Detailpage() { // Riceve antennaId come prop, default 1
+function Detailpage() {
   const [antenna, setAntenna] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
