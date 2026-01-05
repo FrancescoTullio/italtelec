@@ -3,7 +3,7 @@ import CardProduct from "../components/CardProduct.jsx";
 import Loding from "../components/Loding.jsx";
 
 function Productspage() {
-  const products = useProducts();
+  const {products, metadata} = useProducts();
   console.log(products);
 
   return (
@@ -15,13 +15,19 @@ function Productspage() {
         2. Altrimenti (FALSO), visualizza il componente Loding.
       */}
       {Array.isArray(products) && products.length > 0 ? (
-        <div className="row justify-content-center">
+        <>
+        <div>
+          <h3>risultati trovati : {metadata.totalObjects}</h3>
+        </div>
+         <div className="row justify-content-center">
           {products.map((product) => (
             <div key={product.id} className="col-lg-6 col-md-12">
               <CardProduct product={product} />
             </div>
           ))}
         </div>
+        </>
+       
       ) : (
         <Loding />
       )}

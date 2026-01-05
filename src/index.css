@@ -1,8 +1,115 @@
-.navbar-logo {
-  height: 70px;
-  width: auto;
+/* Bootstrap Icons Import */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.navbar-logo {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Button Hover Effects */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Navbar Styles */
+.sticky-top {
+  backdrop-filter: blur(10px);
+}
+
+.nav-link {
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #0d6efd;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Footer Additional Styles */
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  transform: translateX(5px);
+  color: #0d6efd !important;
+}
+
+/* Loading Animation */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a58ca;
+}
 
 /* Footer Styles */
 footer {
@@ -25,7 +132,6 @@ footer::before {
 }
 
 @keyframes gradientMove {
-
     0%,
     100% {
         background-position: 0% 50%;
@@ -186,11 +292,6 @@ footer::before {
 .footer-links a:has(.fa-facebook):hover svg {
     color: #1877f2 !important;
     filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.5));
-}
-
-.footer-links a:has(.fa-instagram):hover svg {
-    color: #e4405f !important;
-    filter: drop-shadow(0 0 8px rgba(228, 64, 95, 0.5));
 }
 
 /* Footer Bottom */
