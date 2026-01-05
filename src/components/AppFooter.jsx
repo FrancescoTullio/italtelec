@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { FaWhatsapp, FaFacebook } from 'react-icons/fa';
 
 function AppFooter() {
+
+  const location = 'Via Tiberina, 49 - Fiano Romano (RM)';
+  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+
   return (
     <footer className="bg-dark text-white pt-5 pb-4 mt-5">
       <div className="container">
@@ -29,7 +33,13 @@ function AppFooter() {
           <div className="footer-section">
             <h4 className="footer-title">Contatti</h4>
             <ul className="footer-links">
-              <li>📍 Via Tiberina, 49 - Fiano Romano (RM)</li>
+              <li >
+                <a
+                  href={googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > 📍 Via Tiberina, 49 - Fiano Romano (RM)</a>
+              </li>
               <li>
                 <a href="tel:+390765481633" target="_blank" rel="noopener noreferrer">
                   📞 +39 0765 481633

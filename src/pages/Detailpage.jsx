@@ -2,51 +2,48 @@ import { useState, useEffect } from 'react';
 import '../css-component/antennaDettail.css';
 import { useParams } from 'react-router-dom';
 
-function Detailpage() { // Riceve antennaId come prop, default 1
+function Detailpage() {
   const [antenna, setAntenna] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
   const antennaId = id;
 
-  console.log('ID ricevuto come prop:', antennaId); // Debug
+
 
   useEffect(() => {
-    console.log('useEffect chiamato, antennaId:', antennaId); // Debug
+
     if (antennaId) {
       fetchAntenna();
     } else {
-      console.log('ID non presente!'); // Debug
+
       setLoading(false);
       setError('ID antenna non specificato');
     }
   }, [antennaId]);
 
   const fetchAntenna = async () => {
-    console.log('Inizio fetch per ID:', antennaId); // Debug
+
     setLoading(true);
     setError(null);
 
     try {
       const url = `http://localhost:3004/italtelec/${antennaId}`;
-      console.log('URL chiamata:', url); // Debug
-
       const response = await fetch(url);
-      console.log('Response status:', response.status); // Debug
+
 
       if (!response.ok) {
         throw new Error('Antenna non trovata');
       }
 
       const data = await response.json();
-      console.log('Dati ricevuti:', data); // Debug
+
       setAntenna(data);
     } catch (err) {
-      console.error('Errore nella fetch:', err); // Debug
+
       setError(err.message);
     } finally {
       setLoading(false);
-      console.log('Loading completato'); // Debug
     }
   };
 
