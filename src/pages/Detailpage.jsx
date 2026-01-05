@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import '../css-component/antennaDettail.css';
+import { useParams } from 'react-router-dom';
 
-function Detailpage({ antennaId = 1 }) { // Riceve antennaId come prop, default 1
+function Detailpage() { // Riceve antennaId come prop, default 1
   const [antenna, setAntenna] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { id } = useParams();
+  const antennaId = id;
 
   console.log('ID ricevuto come prop:', antennaId); // Debug
 
