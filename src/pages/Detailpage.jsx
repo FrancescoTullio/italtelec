@@ -28,7 +28,7 @@ function Detailpage() {
     setError(null);
 
     try {
-      const url = `http://italtelecback2.vercel.app/italtelec/${antennaId}`;
+      const url = `https://italtelecback2.vercel.app/italtelec/${antennaId}`;
       const response = await fetch(url);
 
 
