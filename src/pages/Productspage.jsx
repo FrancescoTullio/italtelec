@@ -1,9 +1,18 @@
+import { useRef, useEffect } from 'react';
 import useProducts from "../hook/useProducts.js";
 import CardProduct from "../components/CardProduct.jsx";
 import Loding from "../components/Loding.jsx";
 
 function Productspage() {
   const { products, metadata, currentPage, setCurrentPage, isLoading } = useProducts();
+  const titleRef = useRef(null);
+
+  // Scroll in alto quando cambia la pagina
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage]);
 
   if (isLoading) {
     return <Loding />;
@@ -11,7 +20,7 @@ function Productspage() {
 
   return (
     <div className="container my-5">
-      <h1 className="text-center mb-4">Catalogo Prodotti</h1>
+      <h1 ref={titleRef} className="text-center mb-4">Catalogo Prodotti</h1>
       
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3>Risultati trovati: {metadata.totalObjects}</h3>

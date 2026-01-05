@@ -46,7 +46,7 @@ function AppFooter() {
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=100057047636927" target="_blank" rel="noopener noreferrer">
                   <FaFacebook style={{ marginRight: '8px' }} /> Facebook
                 </a>
               </li>

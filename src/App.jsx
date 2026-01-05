@@ -4,6 +4,7 @@ import AppLayout from "./layout/AppLayout";
 import HomePage from "./pages/Homepage";
 import Productspage from "./pages/Productspage";
 import Detailpage from "./pages/Detailpage";
+import Contactpage from "./pages/Contactpage";
 function App() {
   const GlobalProviderValue = {};
 
@@ -18,6 +19,7 @@ function App() {
                 <Route index element={<Productspage />} />
                 <Route path=":id" element={<Detailpage />} />
               </Route>
+              <Route path="/contact" element={<Contactpage />} />
             </Route>
           </Routes>
         </BrowserRouter>

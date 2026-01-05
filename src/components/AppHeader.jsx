@@ -40,9 +40,9 @@ function AppHeader() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3 fw-semibold" href="mailto:italtelec_international@italint.com">
+                <Link className="nav-link px-3 fw-semibold" to="/contact">
                   Contatti
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
