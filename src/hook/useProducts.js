@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 function useProducts() {
-  const [products, setProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [metadata, setMetadata] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   const fetchProducts = async () => {
     try {
       const response = await fetch("http://127.0.0.1:3004/italtelec");
       const data = await response.json();
-      setProducts(data.data);
+      setAllProducts(data.data);
       setMetadata(data.metadata);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -19,7 +20,19 @@ function useProducts() {
     fetchProducts();
   }, []);
 
-  return { products, metadata };
+  // Memoizza i prodotti della pagina corrente
+  const currentProducts = useMemo(() => {
+    return allProducts.filter(product => product.page === currentPage);
+  }, [allProducts, currentPage]);
+
+  return { 
+    products: currentProducts,
+    allProducts,
+    metadata, 
+    currentPage, 
+    setCurrentPage,
+    isLoading: allProducts.length === 0
+  };
 }
 
 export default useProducts;
