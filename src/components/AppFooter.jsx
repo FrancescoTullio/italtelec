@@ -33,7 +33,7 @@ function AppFooter() {
           <div className="footer-section">
             <h4 className="footer-title">Contatti</h4>
             <ul className="footer-links">
-              <li >
+              <li>
                 <a
                   href={googleMapsLink}
                   target="_blank"
