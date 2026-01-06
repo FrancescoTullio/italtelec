@@ -341,3 +341,22 @@ footer::before {
         padding-bottom: 2rem !important;
     }
 }
+
+/* Tablet Layout - 2 colonne centrate tra 1024px e 1381px */
+@media (min-width: 1024px) and (max-width: 1381px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 3rem;
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Desktop grande - Layout a 4 colonne (sopra 1381px) */
+@media (min-width: 1382px) {
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+}

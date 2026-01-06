@@ -1,51 +1,10 @@
-import { useState, useEffect } from 'react';
 import '../css-component/antennaDettail.css';
 import { useParams } from 'react-router-dom';
+import useDetail from '../hook/useDetail.js';
 
 function Detailpage() {
-  const [antenna, setAntenna] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const { id } = useParams();
-  const antennaId = id;
-
-
-
-  useEffect(() => {
-
-    if (antennaId) {
-      fetchAntenna();
-    } else {
-
-      setLoading(false);
-      setError('ID antenna non specificato');
-    }
-  }, [antennaId]);
-
-  const fetchAntenna = async () => {
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const url = `https://italtelecback2.vercel.app/italtelec/${antennaId}`;
-      const response = await fetch(url);
-
-
-      if (!response.ok) {
-        throw new Error('Antenna non trovata');
-      }
-
-      const data = await response.json();
-
-      setAntenna(data);
-    } catch (err) {
-
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { antenna, loading, error, refetch } = useDetail(id);
 
   if (loading) {
     return (
@@ -67,7 +26,7 @@ function Detailpage() {
           </svg>
           <h2 className="antenna-error-title">Errore</h2>
           <p className="antenna-error-message">{error}</p>
-          <button className="antenna-retry-button" onClick={fetchAntenna}>
+          <button className="antenna-retry-button" onClick={refetch}>
             Riprova
           </button>
         </div>
